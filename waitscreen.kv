@@ -1,0 +1,43 @@
+
+<WaitScreen>:
+    canvas:
+        Color:
+            rgb: [.4, .2, .3]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    RelativeLayout
+        pos_hint:{'center_x':0.5,'center_y':0.8}
+        BoxLayout:
+            height: sp(150)
+            Label:
+                id:Months_label
+                text: root.uxWeeksDayMonths
+                font_size: 20
+
+    RelativeLayout
+        pos_hint:{'center_x':0.5,'center_y':0.7}
+        BoxLayout:
+            height: sp(150)
+            Label:
+                id:Time_label
+                text: root.uxTime
+                font_size: 70
+
+    RelativeLayout
+        pos_hint:{'center_x':0.5,'center_y':0.6}
+        BoxLayout:
+            height: sp(150)
+            Label:
+                id:Weather_label
+                text: root.cityWeatherTemp
+                font_size: 20
+
+    RelativeLayout:
+        pos_hint:{'center_x':0.5,'center_y':0.1}
+        BoxLayout:
+            size: self.size
+            Image:
+                source: './images/touch.png'
+
