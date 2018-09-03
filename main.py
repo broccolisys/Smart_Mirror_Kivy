@@ -1,38 +1,21 @@
 from kivy.app import App
-from kivy.base import runTouchApp
 from kivy.lang import Builder
-from kivy.uix.widget import Widget
+from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
+class MainScreen(Screen):
+    pass
 
-runTouchApp(Builder.load_string(
+class AnotherScreen(Screen):
+    pass
 
+class ScreenManagement(ScreenManager):
+    pass
 
+presentation = Builder.load_file("main.kv")
 
+class MainApp(App):
+    def build(self):
+        return presentation
 
-    '''
-
-RelativeLayout:
-    
-    padding: 10
-    Button:
-        text: 'R1'
-        size_hint: .2, .2
-        pos: 30, 50
-    Button:
-        text: 'R2'
-        size_hint: .2 ,.2
-        pos: 100, 300
-    Button:
-        text: 'R3'
-        size_hint: .2 ,.2
-        pos: 200, 200
-    Button:
-        text: 'R4'
-        size_hint: .2 ,.2
-        pos: 300, 100
-
-'''))
-
-
-if __name__ == '__main__':
-    MyPaintApp().run()
+if __name__=="__main__":
+    MainApp().run()
