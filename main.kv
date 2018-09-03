@@ -1,22 +1,60 @@
-#: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
-ScreenManagement:
-    transition: FadeTransition()
-    MainScreen:
-    AnotherScreen:
+<GridLayout>
+    canvas.before:
+        Color:
+            rgb: [.4, .2, .3]
+        BorderImage:
+            # BorderImage behaves like the CSS BorderImage
+            border: 10, 10, 10, 10
+            source: './images/button_white.png'
+            pos: self.pos
+            size: self.size
 
-<MainScreen>:
-    name: 'main'
+<RootWidget>
+    GridLayout:
+        size_hint: .9, .8
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        rows:1
+        Label:
+            text: "I don't suffer from insanity, I enjoy every minute of it"
+            text_size: self.width-20, self.height-20
+            valign: 'top'
+        Label:
+            text: "When I was born I was so surprised; I didn't speak for a year and a half."
+            text_size: self.width-20, self.height-20
+            valign: 'middle'
+            halign: 'center'
+        Label:
+            text: "A consultant is someone who takes a subject you understand and makes it sound confusing"
+            text_size: self.width-20, self.height-20
+            valign: 'bottom'
+            halign: 'justify'
 
-    Button:
-        on_release: app.root.current = 'other'
-        text: 'Another Screen'
-        font_size: 50
+ActionBar:
+    pos_hint: {'top':1}
+    ActionView:
+        use_separator: True
+        ActionPrevious:
+            title: 'Action Bar'
+            with_previous: False
+        ActionOverflow:
+        ActionButton:
+            icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+        ActionButton:
+            important: True
+            text: 'Important'
+        ActionButton:
+            text: 'Btn2'
+        ActionButton:
+            text: 'Btn3'
+        ActionButton:
+            text: 'Btn4'
+        ActionGroup:
+            text: 'Group1'
+            ActionButton:
+                text: 'Btn5'
+            ActionButton:
+                text: 'Btn6'
+            ActionButton:
+                text: 'Btn7'
 
-<AnotherScreen>:
-    name: 'other'
-
-    Button:
-        on_release: app.root.current = 'main'
-        text: 'back to the home screen'
-        font_size: 50

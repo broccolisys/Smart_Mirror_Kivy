@@ -32,6 +32,7 @@ class WaitScreen(RelativeLayout):
     def on_touch_down(self, touch):
         print(touch)
 
+
 class WaitScreenApp(App):
     def build(self):
         waitTimeScreen = WaitScreen()
