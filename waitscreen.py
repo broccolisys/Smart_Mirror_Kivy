@@ -5,6 +5,7 @@ from datetime import datetime
 from kivy.clock import Clock
 import json
 import urllib.request
+from pprint import pprint
 
 apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q='
 city = 'Daegu'
@@ -27,6 +28,7 @@ class WaitScreen(RelativeLayout):
         url = urllib.request.urlopen(apiUrl + city + apikey)
         apid = url.read()
         data = json.loads(apid.decode('utf-8'))
+        pprint(data)
         self.cityWeatherTemp = data['name'] + ' ' +  data['weather'][0]['main'] + '  ' + str(data['main']['temp'] - 273.15) + '˚C'
 
     def on_touch_down(self, touch):

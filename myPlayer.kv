@@ -1,0 +1,32 @@
+
+<myPlayer>:
+    orientation:'vertical'
+    BoxLayout:
+        size_hint:1,0.1
+        ActionBar:
+            pos_hint: {'top':1}
+            ActionView:
+                use_separator: True
+                ActionPrevious:
+                    title: 'MY_Player'
+                    with_previous: False
+                ActionOverflow:
+                ActionButton:
+                    icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+                ActionButton:
+                    important: True
+                    text: 'Important'
+    BoxLayout:
+        size_hint:1,0.8
+        Button:
+            text:"ss"
+
+    BoxLayout:
+        size_hint:1,0.1
+        ActionBar:
+            pos_hint: {'bottom':1}
+            ActionView:
+                use_separator: True
+                ActionPrevious:
+                    title: 'MY_Player'
+                    with_previous: False
