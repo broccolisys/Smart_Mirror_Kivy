@@ -1,4 +1,5 @@
 
+
 <WaitScreen>:
     canvas:
         Color:
@@ -38,6 +39,6 @@
         pos_hint:{'center_x':0.5,'center_y':0.1}
         BoxLayout:
             size: self.size
-            Image:
-                source: './images/touch.png'
-
+            IconButton:
+                source:"./images/touch.png"
+                on_release: root.myMain()

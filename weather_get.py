@@ -5,7 +5,7 @@ from datetime import datetime
 from kivy.clock import Clock
 import json
 import urllib.request
-
+from pprint import pprint
 apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='
 city = 'Daegu'
 apikey = '&APPID=342f9ada733a2af5fc78bf8f074b0b1c'
@@ -30,7 +30,7 @@ class Weather(BoxLayout):
         url = urllib.request.urlopen(apiUrl + city + apikey)
         apid = url.read()
         data = json.loads(apid.decode('utf-8'))
-
+        pprint(data)
         self.city = data['city']['name']
         self.temp = data['list'][0]['main']['temp'] - 273.15
         self.temp_max = data['list'][0]['main']['temp_max'] - 273.15
