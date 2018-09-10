@@ -1,6 +1,8 @@
 
 <myPlayer>:
+    id:location_from
     orientation:'vertical'
+    search_input:search_box
     BoxLayout:
         size_hint:1,0.1
         ActionBar:
@@ -17,16 +19,19 @@
                     important: True
                     text: 'Important'
     BoxLayout:
-        size_hint:1,0.8
-        Button:
-            text:"ss"
+        orientation:'vertical'
+        BoxLayout:
+            size_hint_y:0.1
+            TextInput:
+                id:search_box
+                size_hint_x:3
+                focus:True
+                multiline:False
+                on_text_validate:root.youtube_search()
+            Button:
+                text:'Search'
+                on_press:location_from.youtube_search()
 
-    BoxLayout:
-        size_hint:1,0.1
-        ActionBar:
-            pos_hint: {'bottom':1}
-            ActionView:
-                use_separator: True
-                ActionPrevious:
-                    title: 'MY_Player'
-                    with_previous: False
+        BoxLayout:
+            Label:
+                text:"Youtube"

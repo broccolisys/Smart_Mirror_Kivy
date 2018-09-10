@@ -1,43 +1,67 @@
+#: import Button kivy.uix.button.Button
 
-<WaitScreen>:
+<MyMain>:
     canvas:
         Color:
-            rgb: [.4, .2, .3]
+            rgb: 0.12, 0.12, 0.12
         Rectangle:
+            size: self.size
             pos: self.pos
-            size: self.size
 
-    RelativeLayout
-        pos_hint:{'center_x':0.5,'center_y':0.8}
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+    BoxLayout:
+    	orientation:'horizontal'
+    	size_hint: 1, 0.2
         BoxLayout:
-            height: sp(150)
             Label:
-                id:Months_label
-                text: root.uxWeeksDayMonths
-                font_size: 20
+                text:root.uxWeeksDayMonths
+                font_size: 25
+    	BoxLayout:
+    	BoxLayout:
+    	BoxLayout:
+    		Label:
+        		text: root.uxTime
+                font_size: 30
+    BoxLayout:
+    	orientation:'horizontal'
+    	size_hint: 1, 0.9
+    	BoxLayout:
+    		size_hint: None,1
 
-    RelativeLayout
-        pos_hint:{'center_x':0.5,'center_y':0.7}
         BoxLayout:
-            height: sp(150)
-            Label:
-                id:Time_label
-                text: root.uxTime
-                font_size: 70
+            canvas.before:
+                BorderImage:
+                    border: 10, 10, 10, 10
+                    source: './images/button_white_fix.png'
+                    pos: self.pos
+                    size: self.size
+    	    BoxLayout:
+                orientation:'vertical'
+                BoxLayout:
+                    padding: 35
+                    IconButton:
+                        source:"./images/iconNews.png"
+                BoxLayout:
+                    padding: 35
+                    IconButton:
+                        source:"./images/iconWeather.png"
+                        on_press:
+            BoxLayout:
+                orientation:'vertical'
+                BoxLayout:
+                    padding: 35
+                    IconButton:
+                        source: "./images/iconYoutube.png"
+                BoxLayout:
+                    padding: 35
+                    IconButton:
+                        source: "./images/iconSettings.png"
+        BoxLayout:
+        	size_hint: None,1
 
-    RelativeLayout
-        pos_hint:{'center_x':0.5,'center_y':0.6}
-        BoxLayout:
-            height: sp(150)
-            Label:
-                id:Weather_label
-                text: root.cityWeatherTemp
-                font_size: 20
 
-    RelativeLayout:
-        pos_hint:{'center_x':0.5,'center_y':0.1}
-        BoxLayout:
-            size: self.size
-            Image:
-                source: './images/touch.png'
+    BoxLayout:
+    	size_hint: 1, 0.1
 
