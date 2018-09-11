@@ -1,73 +1,36 @@
 
+
 <Weather>:
+    canvas:
+        Color:
+            rgb: 0.12, 0.12, 0.12
+        Rectangle:
+            size: self.size
+            pos: self.pos
     orientation: 'vertical'
     padding:20
+
     BoxLayout:
-        canvas.before:
-            BorderImage:
-                border: 10, 10, 10, 10
-                source: './images/button_white_bottom.png'
-                pos: self.pos
-                size: self.size
+        size_hint: 1,0.15
+        Label:
+            text:'s'
+    BoxLayout:
         orientation:'horizontal'
         BoxLayout:
-        	size_hint:0.8,1
-            orientation:'vertical'
-            BoxLayout:
-            	size_hint:1,0.3
-                Label:
-                    text:root.condition
-
-            BoxLayout:
-            	size_hint:1,0.2
-                orientation:'horizontal'
-                BoxLayout:
-                    Label:
-                        text:"{0:0.1f}".format(root.temp_max)
-                        font_size: 10
-                BoxLayout:
-                    Label:
-                        text:"{0:0.1f}".format(root.temp_min)
-                        font_size: 10
-            BoxLayout:
-                Label:
-                    text: "{0:0.1f}".format(root.temp)
-                    font_size: 20
-
+            size_hint: 0.2,1
         BoxLayout:
-            orientation:"vertical"
-            BoxLayout:
-            	size_hint:1,0.5
-
-
+            canvas.before:
+                BorderImage:
+                    border: 10, 10, 10, 10
+                    source: './images/button_white_fix.png'
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text:"Graph"
         BoxLayout:
-        	size_hint:0.5,1
-
+            size_hint: 0.2,1
 
     BoxLayout:
-        canvas.before:
-            BorderImage:
-                border: 10, 10, 10, 10
-                source: './images/button_white_bottom.png'
-                pos: self.pos
-                size: self.size
-        Button:
-            text:"Graph"
-
-    BoxLayout:
-        orientation:"horizontal"
-        BoxLayout:
-            Label:
-                text:root.datePlusone
-        BoxLayout:
-            Label:
-                text:root.datePlustwo
-        BoxLayout:
-            Label:
-                text:root.datePlusthree
-        BoxLayout:
-            Label:
-                text:root.datePlusfour
-        BoxLayout:
-            Label:
-                text:root.datePlusfive
+        size_hint: 1,0.2
+        Label:
+            text:'s'
